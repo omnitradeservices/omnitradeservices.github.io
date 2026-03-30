@@ -1,159 +1,86 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Omnitrade Manpower Solutions Ltd | Staffing & Cleaning Services</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnitrade Manpower Solutions Ltd. | Elite Staffing & Facility Management</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+        :root {
+            --primary: #0d1b2a; /* Deep Navy */
+            --secondary: #1b263b; /* Corporate Blue */
+            --accent: #e0e1dd; /* Silver/Grey */
+            --text: #ffffff;
+            --body-text: #8e9aaf;
         }
-        header {
-            background: #0d1b2a;
-            color: white;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 22px;
-        }
-        nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .hero {
-            background: #1b263b;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #e0a800;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            border: 1px solid #ddd;
-            padding: 20px;
-            background: white;
-        }
-        .card h3 {
-            margin-top: 0;
-        }
-        .why ul {
-            max-width: 700px;
-            margin: auto;
-        }
-        .contact {
-            background: #f4f4f4;
-            text-align: center;
-        }
-        footer {
-            background: #0d1b2a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        
+        /* Header & Navigation */
+        header { background: var(--primary); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--secondary); }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--text); letter-spacing: 1px; }
+        nav a { color: var(--accent); text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 0.9rem; text-transform: uppercase; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(13, 27, 42, 0.8), rgba(27, 38, 59, 0.8)), url('images/hero-bg.jpg') center/cover; padding: 120px 10%; text-align: center; color: white; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: var(--accent); }
+        .btn { background: var(--text); color: var(--primary); padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 2px; transition: 0.3s; }
+        .btn:hover { background: var(--accent); }
+
+        /* Services Grid */
+        .services { padding: 80px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; background: white; }
+        .service-card { padding: 40px; border: 1px solid #eee; transition: 0.3s; text-align: left; }
+        .service-card:hover { border-color: var(--secondary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .service-card h3 { color: var(--primary); font-size: 1.4rem; margin-top: 0; }
+        .service-card p { color: #666; font-size: 0.95rem; }
+
+        /* Trust Section */
+        .trust { background: var(--primary); color: white; padding: 60px 10%; text-align: center; }
+        .trust h2 { font-size: 2.2rem; margin-bottom: 15px; }
+
+        /* Footer */
+        footer { background: #050a0f; color: #555; text-align: center; padding: 40px; font-size: 0.8rem; }
     </style>
 </head>
-
 <body>
 
 <header>
-    <h1>Omnitrade</h1>
+    <div class="logo">OMNITRADE <span style="color: #778da9;">MANPOWER</span></div>
     <nav>
-        <a href="#services">Services</a>
-        <a href="#why">Why Us</a>
-        <a href="#contact">Contact</a>
+        <a href="mailto:info@omnitradeservices.ca">Contact Us</a>
     </nav>
 </header>
 
-<section class="hero"> <section class="hero" style="background: url('images/banner.jpg') center/cover no-repeat; color:white;">
-    <h2>Reliable Staffing & Property Services</h2>
-    <p>Providing skilled manpower and professional cleaning solutions across British Columbia.</p>
-    <a href="#contact" class="btn">Request a Quote</a>
+<section class="hero">
+    <h1>Strategic Workforce Solutions.</h1>
+    <p>Omnitrade Manpower Solutions Ltd. delivers high-standard outsource employment and specialized maintenance for industrial, commercial, and hospitality sectors.</p>
+    <a href="mailto:info@omnitradeservices.ca" class="btn">REQUEST A CONSULTATION</a>
 </section>
 
-<section id="services" class="section">
-    <h2 style="text-align:center;">Our Services</h2>
-    <div class="services">
-        <div class="card">
-    <img src="images/pic02.jpg" style="width:100%; height:150px; object-fit:cover;">
-    <h3>Warehouse Staffing</h3>
-    <p>Experienced workers for all warehouse operations including logistics and handling.</p>
-</div>
-        <div class="card">
-            <h3>Warehouse Staffing</h3>
-            <p>Experienced workers for all warehouse operations including logistics and handling.</p>
-        </div>
-        <div class="card">
-            <h3>Driver Services</h3>
-            <p>Reliable delivery and transportation drivers for business operations.</p>
-        </div>
-        <div class="card">
-            <h3>Cleaning Services</h3>
-            <p>Residential, commercial, and strata cleaning with high standards.</p>
-        </div>
-        <div class="card">
-            <h3>Move-In / Move-Out</h3>
-            <p>Detailed cleaning solutions for property transitions.</p>
-        </div>
-        <div class="card">
-            <h3>Airbnb Management</h3>
-            <p>Cleaning, laundry, restocking, and property maintenance services.</p>
-        </div>
-        <div class="card">
-            <h3>Specialized Cleaning</h3>
-            <p>Roof cleaning and customized solutions for unique requirements.</p>
-        </div>
+<section class="services">
+    <div class="service-card">
+        <h3>Industrial Logistics</h3>
+        <p>Expert deployment of warehouse staff, delivery drivers, and specialized logistics personnel. We provide the human capital necessary to optimize your supply chain.</p>
+    </div>
+
+    <div class="service-card">
+        <h3>Premium Maintenance</h3>
+        <p>Comprehensive cleaning solutions for residential apartments, strata councils, and commercial buildings. Specializing in move-in/move-out turnover and roof maintenance.</p>
+    </div>
+
+    <div class="service-card">
+        <h3>Hospitality Management</h3>
+        <p>Bespoke Short-Term Rental (STR) solutions. From professional laundry and restocking to five-star property preparation, we maintain your reputation for excellence.</p>
     </div>
 </section>
 
-<section id="why" class="section why">
-    <h2 style="text-align:center;">Why Choose Us</h2>
-    <ul>
-        <li>✔ Professional and trained workforce</li>
-        <li>✔ Reliable and consistent service delivery</li>
-        <li>✔ Flexible staffing and service solutions</li>
-        <li>✔ High standards and attention to detail</li>
-    </ul>
-</section>
-
-<section id="contact" class="section contact">
-    <h2>Contact Us</h2>
-    <p>Get in touch for staffing and service inquiries.</p>
-    <p><strong>Email:</strong> info@omnitradeservices.ca</p>
-    <p><strong>Phone:</strong> +1 236 234 4777 </p>
+<section class="trust">
+    <h2>Built on Reliability. Defined by Quality.</h2>
+    <p>Serving Surrey and the Greater British Columbia area with professional staffing and maintenance solutions.</p>
 </section>
 
 <footer>
-    <p>&copy; Omnitrade Manpower Solutions Ltd. All rights reserved.</p>
+    <p>&copy; 2026 Omnitrade Manpower Solutions Ltd. | Domain: <a href="http://omnitradeservices.ca" style="color: #555;">omnitradeservices.ca</a></p>
+    <p>Surrey, British Columbia, Canada</p>
 </footer>
 
 </body>
