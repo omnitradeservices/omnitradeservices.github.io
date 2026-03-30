@@ -3,107 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omnitrade Manpower Solutions Ltd. | Industry Leaders</title>
+    <title>Omnitrade Manpower Solutions Ltd. | Corporate Headquarters</title>
     <style>
-        :root { --navy: #0a192f; --slate: #172a45; --gold: #c5a059; --white: #e6f1ff; }
-        body { margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; overflow-x: hidden; }
+        :root { --navy: #0a192f; --slate: #172a45; --gold: #c5a059; --white: #ffffff; }
+        body { margin: 0; font-family: 'Arial', sans-serif; background: #fff; overflow-x: hidden; }
+
+        /* Full Navigation Bar */
+        header { position: fixed; width: 100%; top: 0; background: var(--navy); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-sizing: border-box; border-bottom: 2px solid var(--gold); }
+        .brand { font-weight: 800; color: white; font-size: 1.1rem; text-transform: uppercase; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; padding: 5px 10px; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
+
+        /* Slideshow Container */
+        .slider-container { position: relative; height: 75vh; width: 100%; overflow: hidden; margin-top: 60px; }
+        .slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+        .slide.active { opacity: 1; }
+        .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
+        .slide-text { z-index: 5; }
+        .slide-text h1 { font-size: 3.5rem; text-transform: uppercase; margin: 0; }
         
-        /* High-End Header */
-        header { position: fixed; width: 100%; top: 0; background: rgba(10, 25, 47, 0.95); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid var(--gold); }
-        .brand { font-weight: 800; color: white; font-size: 1.1rem; letter-spacing: 2px; }
-        
-        /* Hero Section with Banner */
-        .hero { 
-            position: relative;
-            height: 80vh; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/banner.jpg') no-repeat center center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-        }
-        .hero-content h1 { font-size: 4rem; margin: 0; text-transform: uppercase; }
-        
-        /* The LinkedIn-Style Circular Logo Overlay */
-        .profile-logo {
-            position: absolute;
-            bottom: -60px;
-            left: 10%;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid white;
-            background: var(--navy);
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
+        /* Profile Logo Position */
+        .profile-logo { position: absolute; bottom: 20px; left: 5%; width: 140px; height: 140px; border-radius: 50%; border: 4px solid white; background: white; z-index: 20; overflow: hidden; }
         .profile-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Service Strategy Section */
-        .content-section { padding: 120px 10% 60px; background: #f9f9f9; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
-        .card { background: white; padding: 30px; border-left: 4px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* Information Grid (Job Seekers / Business) */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0; background: #f4f4f4; }
+        .info-box { padding: 50px 10%; text-align: center; border: 1px solid #ddd; transition: 0.4s; }
+        .info-box:hover { background: var(--navy); color: white; }
+        .info-box h2 { font-size: 1.5rem; margin-bottom: 15px; }
+        .btn-link { display: inline-block; padding: 10px 20px; background: var(--gold); color: white; text-decoration: none; font-weight: bold; margin-top: 15px; }
 
-        /* Image Showcase (Gallery for your 8 images) */
-        .gallery { padding: 60px 10%; background: white; }
-        .gallery-h2 { text-align: center; margin-bottom: 40px; font-size: 2.5rem; color: var(--navy); }
-        .image-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-        .image-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; transition: 0.3s; filter: grayscale(20%); }
-        .image-grid img:hover { filter: grayscale(0%); transform: scale(1.02); }
-
-        footer { background: var(--navy); color: var(--white); padding: 80px 10%; text-align: center; }
+        footer { background: var(--navy); color: white; padding: 50px; text-align: center; }
     </style>
 </head>
 <body>
 
 <header>
-   <div class="brand">OMNITRADE <span style="color: var(--gold);">MANPOWER SOLUTIONS LTD.</span></div>
+    <div class="brand">OMNITRADE <span style="color: var(--gold);">MANPOWER SOLUTIONS LTD.</span></div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#business">For Business</a>
+        <a href="#jobs">Job Seekers</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="mailto:info@omnitradeservices.ca">Contact</a>
+    </nav>
 </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Global Standards. Local Expertise.</h1>
-        <p>Strategic Manpower & Premium Facility Management</p>
+<div class="slider-container">
+    <div class="slide active" style="background-image: url('images/banner.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-text"><h1>Global Standards.</h1><p>Strategic Staffing Solutions</p></div>
     </div>
+    <div class="slide" style="background-image: url('images/image02.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-text"><h1>Local Expertise.</h1><p>The Trusted Name in BC Manpower</p></div>
+    </div>
+    <div class="slide" style="background-image: url('images/image03.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-text"><h1>Reliable Results.</h1><p>Premium Facility Maintenance</p></div>
+    </div>
+    
     <div class="profile-logo">
-        <img src="images/image01.jpg" alt="Omnitrade Logo"> </div>
-</section>
-
-<section class="content-section">
-    <h2>Operations Overview</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Staffing & Logistics</h3>
-            <p>Providing certified warehouse operators and delivery fleets for 3PL and industrial partners.</p>
-        </div>
-        <div class="card">
-            <h3>Facility Maintenance</h3>
-            <p>Specialized cleaning for Strata, Commercial, and high-value Residential properties.</p>
-        </div>
-        <div class="card">
-            <h3>Hospitality Logistics</h3>
-            <p>Premium turnover services for Airbnb and luxury short-term rental management.</p>
-        </div>
+        <img src="images/image01.jpg" alt="Logo">
     </div>
-</section>
+</div>
 
-<section class="gallery">
-    <h2 class="gallery-h2">Our Portfolio in Action</h2>
-    <div class="image-grid">
-        <img src="images/image01.jpg" alt="Service 1">
-        <img src="images/image02.jpg" alt="Service 2">
-        <img src="images/image03.jpg" alt="Service 3">
-        <img src="images/image04.jpg" alt="Service 4">
-        <img src="images/image05.jpg" alt="Service 5">
-        <img src="images/image06.jpg" alt="Service 6">
-        <img src="images/image07.jpg" alt="Service 7">
-        <img src="images/image08.jpg" alt="Service 8">
+<section class="info-grid" id="jobs">
+    <div class="info-box">
+        <h2>For Job Seekers</h2>
+        <p>Find the right career path without the hassle. We connect talent with opportunity.</p>
+        <a href="mailto:info@omnitradeservices.ca" class="btn-link">LEARN MORE</a>
+    </div>
+    <div class="info-box" style="background: var(--slate); color: white;">
+        <h2>Seasonal Hiring</h2>
+        <p>Expert staffing solutions for peak seasons, from warehousing to delivery.</p>
+        <a href="mailto:info@omnitradeservices.ca" class="btn-link">GET STARTED</a>
+    </div>
+    <div class="info-box">
+        <h2>About Us</h2>
+        <p>A multi-service agency dedicated to high standards and corporate integrity.</p>
+        <a href="mailto:info@omnitradeservices.ca" class="btn-link">OUR STORY</a>
     </div>
 </section>
 
 <footer>
-    <p>OMNITRADE MANPOWER SOLUTIONS LTD.</p>
-    <p>Director: Shivam Verma | Surrey, BC</p>
-    <p>info@omnitradeservices.ca</p>
+    <p>&copy; 2026 OMNITRADE MANPOWER SOLUTIONS LTD.</p>
 </footer>
+
+<script>
+    let slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+    setInterval(nextSlide, 4000); // Changes image every 4 seconds
+</script>
 
 </body>
 </html>
