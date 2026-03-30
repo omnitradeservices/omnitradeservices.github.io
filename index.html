@@ -3,66 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omnitrade Manpower Solutions Ltd. | Corporate Site</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Omnitrade Manpower Solutions Ltd. | Official Site</title>
     <style>
-        :root { --navy: #0a192f; --slate: #172a45; --gold: #c5a059; --white: #ffffff; --light-grey: #f4f7f6; }
-        body { margin: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--white); color: #333; }
+        :root { --navy: #0a192f; --gold: #c5a059; --light: #f4f7f6; --white: #ffffff; }
+        html { scroll-behavior: smooth; } /* Makes buttons slide smoothly to sections */
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: var(--white); color: #333; }
 
         /* Navigation */
-        header { position: fixed; width: 100%; top: 0; background: var(--navy); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-sizing: border-box; border-bottom: 2px solid var(--gold); }
-        .brand { font-weight: 800; color: white; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
-        nav a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-left: 25px; transition: 0.3s; }
+        header { position: fixed; width: 100%; top: 0; background: var(--navy); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-sizing: border-box; border-bottom: 2px solid var(--gold); }
+        .brand { font-weight: 800; color: white; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin-left: 20px; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
-        /* Full-Screen Slider */
-        .slider-container { position: relative; height: 90vh; width: 100%; overflow: hidden; margin-top: 70px; }
-        .slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s ease-in-out; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+        /* Slider */
+        .slider-container { position: relative; height: 70vh; width: 100%; overflow: hidden; margin-top: 60px; }
+        .slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; }
         .slide.active { opacity: 1; }
         .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
-        .slide-text { z-index: 5; color: white; text-align: center; padding: 0 10%; }
-        .slide-text h1 { font-size: 4.5rem; text-transform: uppercase; margin: 0; line-height: 1; }
-        .slide-text p { font-size: 1.5rem; margin-top: 20px; color: var(--gold); font-weight: 300; }
+        .slide-text { z-index: 5; text-align: center; }
+        .slide-text h1 { font-size: 3rem; text-transform: uppercase; margin: 0; }
 
-        /* LinkedIn Style Profile Logo */
-        .profile-logo { position: absolute; bottom: -75px; left: 8%; width: 180px; height: 180px; border-radius: 50%; border: 6px solid white; background: white; z-index: 20; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        /* FIXED LOGO POSITION (Moved further down to avoid overlap) */
+        .profile-logo { position: absolute; bottom: -50px; left: 5%; width: 150px; height: 150px; border-radius: 50%; border: 6px solid white; background: white; z-index: 20; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
         .profile-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Section Spacing */
-        section { padding: 100px 10%; position: relative; }
+        /* Section Styling */
+        section { padding: 100px 10% 60px; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; text-transform: uppercase; color: var(--navy); }
 
-        /* Stats / Why Choose Us (Dark Bar) */
-        .stats-bar { background: var(--navy); color: white; display: flex; justify-content: space-around; text-align: center; padding: 60px 10%; }
-        .stat-item h2 { font-size: 3rem; color: var(--gold); margin: 0; }
-        .stat-item p { text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; }
+        /* Enhanced Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .s-card { background: var(--light); padding: 40px; border-top: 5px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; }
+        .s-card:hover { transform: translateY(-10px); background: white; }
+        .s-card h3 { color: var(--navy); margin-top: 0; }
+        .s-card ul { padding-left: 20px; font-size: 0.9rem; color: #555; }
 
-        /* Action Grid */
-        .action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
-        .action-card { background: var(--light-grey); padding: 50px 30px; text-align: center; border-radius: 4px; transition: 0.4s; border-bottom: 5px solid transparent; }
-        .action-card:hover { transform: translateY(-10px); border-bottom: 5px solid var(--gold); background: white; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .action-card i { font-size: 3rem; color: var(--navy); margin-bottom: 20px; }
-        .action-card h3 { text-transform: uppercase; margin-bottom: 15px; }
-        .btn-action { display: inline-block; padding: 12px 30px; background: var(--navy); color: white; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
-        .btn-action:hover { background: var(--gold); }
+        /* Query / Contact Form */
+        .query-section { background: var(--navy); color: white; border-radius: 8px; padding: 60px; margin-top: 40px; }
+        .query-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .query-form input, .query-form textarea { padding: 15px; border: none; border-radius: 4px; font-size: 1rem; }
+        .query-form textarea { grid-column: span 2; height: 120px; }
+        .submit-btn { grid-column: span 2; background: var(--gold); color: white; font-weight: bold; border: none; padding: 15px; cursor: pointer; text-transform: uppercase; }
 
-        /* Trust Banners Section */
-        .trust-banners { text-align: center; padding: 60px 10%; background: #fff; border-top: 1px solid #eee; }
-        .banner-flex { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; opacity: 0.7; }
-        .banner-flex img { height: 80px; filter: grayscale(100%); transition: 0.3s; }
-        .banner-flex img:hover { filter: grayscale(0%); opacity: 1; }
-
-        /* Footer */
-        footer { background: var(--navy); color: white; padding: 80px 10% 40px; }
-        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
-        .footer-brand h2 { color: var(--gold); margin-bottom: 20px; }
-        .contact-info p { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .bottom-bar { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; font-size: 0.8rem; color: #666; }
-
-        @media (max-width: 768px) {
-            .slide-text h1 { font-size: 2.5rem; }
-            .action-grid { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; }
-        }
+        footer { background: #050a0f; color: white; padding: 40px; text-align: center; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -73,92 +56,74 @@
         <a href="#">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
-        <a href="tel:2362344777"><i class="fas fa-phone"></i> 236-234-4777</a>
+        <a href="#query">Post a Query</a>
     </nav>
 </header>
 
 <div class="slider-container">
-    <div class="slide active" style="background-image: url('images/banner.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text"><h1>Global Standards.</h1><p>Strategic Workforce Solutions for Industry Leaders</p></div>
-    </div>
-    <div class="slide" style="background-image: url('images/image02.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text"><h1>Local Expertise.</h1><p>Reliable Manpower across British Columbia</p></div>
-    </div>
-    <div class="slide" style="background-image: url('images/image03.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text"><h1>Elite Maintenance.</h1><p>Five-Star Facility & Hospitality Logistics</p></div>
-    </div>
+    <div class="slide active" style="background-image: url('images/banner.jpg');"><div class="slide-overlay"></div><div class="slide-text"><h1>Precision Staffing</h1></div></div>
+    <div class="slide" style="background-image: url('images/image02.jpg');"><div class="slide-overlay"></div><div class="slide-text"><h1>Elite Maintenance</h1></div></div>
+    <div class="slide" style="background-image: url('images/image03.jpg');"><div class="slide-overlay"></div><div class="slide-text"><h1>Hospitality Experts</h1></div></div>
     
     <div class="profile-logo">
         <img src="images/image01.jpg" alt="Omnitrade Logo">
     </div>
 </div>
 
-<section class="stats-bar">
-    <div class="stat-item"><h2>20+</h2><p>Corporate Clients</p></div>
-    <div class="stat-item"><h2>1100+</h2><p>Talent Pool</p></div>
-    <div class="stat-item"><h2>24/7</h2><p>Operational Support</p></div>
-</section>
-
 <section id="services">
-    <h2 style="text-align: center; text-transform: uppercase; letter-spacing: 2px;">Our Strategic Services</h2>
-    <div class="action-grid">
-        <div class="action-card">
-            <i class="fas fa-warehouse"></i>
-            <h3>Warehouse Staffing</h3>
-            <p>On-demand logistics personnel and certified forklift operators tailored to your workload.</p>
-            <a href="mailto:info@omnitradeservices.ca" class="btn-action">HIRE TALENT</a>
+    <h2 class="section-title">Our Specialized Solutions</h2>
+    <div class="services-grid">
+        <div class="s-card">
+            <h3>Logistics & Driving</h3>
+            <ul>
+                <li>Certified Warehouse Operators</li>
+                <li>Delivery & 5-Ton Truck Drivers</li>
+                <li>Sorters & Inventory Managers</li>
+                <li>Outsourced General Labor</li>
+            </ul>
         </div>
-        <div class="action-card">
-            <i class="fas fa-truck"></i>
-            <h3>Delivery Solutions</h3>
-            <p>Professional drivers and delivery assistants to keep your fleet moving efficiently.</p>
-            <a href="tel:2362344777" class="btn-action">CONTACT US</a>
+        <div class="s-card">
+            <h3>Facility Maintenance</h3>
+            <ul>
+                <li>Commercial & Building Cleaning</li>
+                <li>Strata Council Contracts</li>
+                <li>Post-Construction Cleanup</li>
+                <li>Professional Roof Cleaning</li>
+            </ul>
         </div>
-        <div class="action-card">
-            <i class="fas fa-broom"></i>
-            <h3>Premium Cleaning</h3>
-            <p>Commercial, residential, and Airbnb turnover services with uncompromising quality.</p>
-            <a href="#about" class="btn-action">LEARN MORE</a>
+        <div class="s-card">
+            <h3>Residential & Hospitality</h3>
+            <ul>
+                <li>Home Move-in / Move-out</li>
+                <li>Airbnb Turnover Management</li>
+                <li>Professional Laundry & Restocking</li>
+                <li>Property Management Support</li>
+            </ul>
         </div>
     </div>
 </section>
 
-<section class="trust-banners">
-    <h3>ACCREDITATIONS & PARTNERSHIPS</h3>
-    <div class="banner-flex">
-        <img src="images/image04.jpg" alt="Partner 1">
-        <img src="images/image05.jpg" alt="Partner 2">
-        <img src="images/image06.jpg" alt="Partner 3">
-        <img src="images/image07.jpg" alt="Partner 4">
-        <img src="images/image08.jpg" alt="Partner 5">
+<section id="query">
+    <div class="query-section">
+        <h2 style="text-align: center; color: var(--gold);">POST A SERVICE QUERY</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Tell us about your project or staffing needs. Our executive team will revert back within 24 hours.</p>
+        <form class="query-form" action="mailto:info@omnitradeservices.ca" method="post" enctype="text/plain">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Company Name" style="grid-column: span 2;">
+            <textarea placeholder="Tell us about the services you require (e.g. Number of workers, cleaning frequency, or specific plans)..." required></textarea>
+            <button type="submit" class="submit-btn">SUBMIT QUERY</button>
+        </form>
     </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Omnitrade</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #555;">Omnitrade Manpower Solutions Ltd. is a Surrey-based leader in workforce outsourcing. We bridge the gap between elite industry standards and local execution, providing reliable manpower for BC's growing commercial and residential landscape.</p>
 </section>
 
 <footer>
-    <div class="footer-content">
-        <div class="footer-brand">
-            <h2>OMNITRADE</h2>
-            <p>A leading staffing and outsource employment agency providing high-standard workforce solutions across Surrey and the Greater Vancouver area.</p>
-        </div>
-        <div class="contact-info">
-            <h3>HEADQUARTERS</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Surrey, British Columbia</p>
-            <p><i class="fas fa-phone"></i> 236-234-4777</p>
-            <p><i class="fas fa-envelope"></i> info@omnitradeservices.ca</p>
-        </div>
-        <div class="links">
-            <h3>QUICK LINKS</h3>
-            <p><a href="#" style="color: white; text-decoration: none;">Job Seekers</a></p>
-            <p><a href="#" style="color: white; text-decoration: none;">For Business</a></p>
-            <p><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></p>
-        </div>
-    </div>
-    <div class="bottom-bar">
-        &copy; 2026 OMNITRADE MANPOWER SOLUTIONS LTD. | ALL RIGHTS RESERVED.
-    </div>
+    <p>&copy; 2026 OMNITRADE MANPOWER SOLUTIONS LTD. | Surrey, British Columbia</p>
 </footer>
 
 <script>
