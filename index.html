@@ -15,55 +15,35 @@
         nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin-left: 20px; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
-        /* Slider - FIXED STRUCTURE */
-        <div class="slider-container">
-    <div class="slide active" style="background-image: url('images/banner.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text">
-            <h1>Proven Operational Capacity</h1>
-            <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 1px;">Scalable manpower for high-velocity logistics centers.</p>
-        </div>
-    </div>
+       /* Slider - Structure Fixed */
+        .slider-container { position: relative; height: 75vh; width: 100%; overflow: hidden; margin-top: 60px; z-index: 1; }
+        .slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; }
+        .slide.active { opacity: 1; }
+        .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+        
+        .slide-text { z-index: 5; text-align: center; padding: 0 10%; }
+        .slide-text h1 { font-size: 3.5rem; text-transform: uppercase; margin: 0; letter-spacing: 3px; font-weight: 900; }
+        .slide-text p { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; font-weight: 300; }
 
-    <div class="slide" style="background-image: url('images/image02.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text">
-            <h1>Facility Integrity Assured</h1>
-            <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 1px;">Elite maintenance for commercial and strata assets.</p>
-        </div>
-    </div>
-
-    <div class="slide" style="background-image: url('images/image03.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text">
-            <h1>Global Standards</h1>
-            <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 1px;">Professional 3rd-party execution with local expertise.</p>
-        </div>
-    </div>
-</div>
-        /* LOGO - MOVED OUTSIDE SLIDER & RE-POSITIONED */
+        /* LOGO - Fixed position to overlap perfectly */
         .profile-logo { 
             position: absolute; 
-            top: 70vh; /* Adjusts height to overlap the banner and white section */
+            top: 70vh; /* Positions it to overlap the slider bottom */
             left: 10%; 
             width: 160px; 
             height: 160px; 
             border-radius: 50%; 
             background: white; 
-            z-index: 100; /* Stays above everything */
+            z-index: 100; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-        .profile-logo img { 
-            width: 85%; 
-            height: auto; 
-            object-fit: contain; 
-        }
+        .profile-logo img { width: 85%; height: auto; object-fit: contain; }
 
-        section { padding: 80px 10%; }
+        section { padding: 100px 10% 60px; }
         .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; color: var(--navy); letter-spacing: 2px; }
         /* Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
