@@ -24,23 +24,28 @@
         .slide-text h1 { font-size: 3.5rem; text-transform: uppercase; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
         z-index: 1;
 
-        /* LOGO FIX - Precise Alignment & Stacking */
+        /* LOGO - Exact Placement Overlapping the White Section */
         .profile-logo { 
             position: absolute; 
-            bottom: -65px; /* Adjusted to sit perfectly on the line */
-            left: 40px; 
-            width: 140px; 
-            height: 140px; 
+            bottom: -70px; /* This pulls it down to overlap the white section */
+            left: 10%; 
+            width: 160px; 
+            height: 160px; 
             border-radius: 50%; 
-            border: 6px solid white; 
+            border: 0; /* Removed border to match your screenshot */
             background: white; 
-            z-index: 99; /* Higher priority to stay above the slider overlay */
+            z-index: 100; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            padding: 12px; /* Safety buffer to prevent edges touching the border */
-            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow like the photo */
+            overflow: hidden;
+        }
+
+        .profile-logo img { 
+            width: 85%; /* Gives it that clean internal spacing seen in your image */
+            height: auto;
+            object-fit: contain;
         }
 
         .profile-logo img { 
