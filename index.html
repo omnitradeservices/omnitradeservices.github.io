@@ -15,49 +15,38 @@
         nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin-left: 20px; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
-        /* Slider */
-        .slider-container { position: relative; height: 75vh; width: 100%; overflow: hidden; margin-top: 60px; }
+        /* Slider - FIXED STRUCTURE */
+        .slider-container { position: relative; height: 75vh; width: 100%; overflow: hidden; margin-top: 60px; z-index: 1; }
         .slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; }
         .slide.active { opacity: 1; }
-        .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+        .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
         .slide-text { z-index: 5; text-align: center; }
         .slide-text h1 { font-size: 3.5rem; text-transform: uppercase; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        z-index: 1;
 
-        /* LOGO - Exact Placement Overlapping the White Section */
+        /* LOGO - MOVED OUTSIDE SLIDER & RE-POSITIONED */
         .profile-logo { 
             position: absolute; 
-            bottom: -70px; /* This pulls it down to overlap the white section */
+            top: 70vh; /* Adjusts height to overlap the banner and white section */
             left: 10%; 
             width: 160px; 
             height: 160px; 
             border-radius: 50%; 
-            border: 0; /* Removed border to match your screenshot */
             background: white; 
-            z-index: 100; 
+            z-index: 100; /* Stays above everything */
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow like the photo */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-
         .profile-logo img { 
-            width: 85%; /* Gives it that clean internal spacing seen in your image */
-            height: auto;
-            object-fit: contain;
-        }
-
-        .profile-logo img { 
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Prevents the logo from being stretched or cut */
-            border-radius: 50%; /* Ensures the image itself conforms to the circle */
+            width: 85%; 
+            height: auto; 
+            object-fit: contain; 
         }
 
         section { padding: 80px 10%; }
         .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; color: var(--navy); letter-spacing: 2px; }
-
         /* Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .s-card { background: white; border: 1px solid #eee; overflow: hidden; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
