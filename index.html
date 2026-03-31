@@ -25,24 +25,26 @@
         .slide-text h1 { font-size: 3.5rem; text-transform: uppercase; margin: 0; letter-spacing: 3px; font-weight: 900; }
         .slide-text p { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; font-weight: 300; }
 
-        /* LOGO - Fixed position to overlap perfectly */
-        .profile-logo { 
-            position: absolute; 
-            top: 70vh; /* Positions it to overlap the slider bottom */
-            left: 10%; 
-            width: 160px; 
-            height: 160px; 
-            border-radius: 50%; 
-            background: white; 
-            z-index: 100; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        .profile-logo img { width: 85%; height: auto; object-fit: contain; }
+       /* Line 29: The container for the circular profile look */
+.profile-logo { 
+    position: absolute; 
+    top: 67vh;              /* Line 31: This overlaps the banner (75vh) perfectly */
+    left: 10%; 
+    width: 160px; 
+    height: 160px; 
+    border-radius: 50%;     /* Line 35: Circular shape */
+    background: white; 
+    border: 5px solid #fff; /* Line 37: The signature LinkedIn white border */
+    z-index: 100; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Line 41: Makes the circle "pop" */
+    overflow: hidden;
+}
 
+/* Line 44: Ensures the image fills the circle without gaps */
+.profile-logo img { width: 100%; height: 100%; object-fit: cover; }
         section { padding: 100px 10% 60px; }
         .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; color: var(--navy); letter-spacing: 2px; }
         /* Services Grid */
@@ -101,6 +103,10 @@
         </div>
     </div>
 
+    <div class="profile-logo">
+    <img src="images/image01.jpg" alt="Omnitrade Logo">
+</div>
+    
     <div class="slide" style="background-image: url('images/image02.jpg');">
         <div class="slide-overlay"></div>
         <div class="slide-text">
