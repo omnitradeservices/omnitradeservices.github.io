@@ -26,30 +26,21 @@
         .slide-text p { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; font-weight: 300; }
 
        
-profile-logo {
-    position: absolute;
-    top: 73vh;               
-    left: 10%;
-    width: 160px;           
-    height: 160px;
-    aspect-ratio: 1 / 1;    
-    border-radius: 50% !important; 
-    background: #ffffff;
-    border: 6px solid #fff; 
-    z-index: 999;           
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Find your .profile-logo img section and replace it with this: */
-.profile-logo img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;      /* Ensures the logo fills the circle perfectly */
-    display: block;
+/* The LinkedIn-Style Circular Logo Overlay */
+        .profile-logo {
+            position: absolute;
+            bottom: -60px;
+            left: 10%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            background: var(--navy);
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        .profile-logo img { width: 100%; height: 100%; object-fit: cover; }
 }
         /* Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -107,8 +98,8 @@ profile-logo {
         </div>
     </div>
 
-    <div class="profile-logo">
-    <img src="images/image01.jpg" alt="Omnitrade Logo">
+   <div class="profile-logo">
+        <img src="images/image01.jpg" alt="Omnitrade Logo"> </div>
 </div>
     
     <div class="slide" style="background-image: url('images/image02.jpg');">
