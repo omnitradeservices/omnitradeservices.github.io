@@ -205,16 +205,29 @@
 </section>
 
 <section id="query">
-    <div class="query-section">
-        <h2 style="text-align: center; color: var(--gold); margin-top: 0;">POST A SERVICE QUERY</h2>
-        <form class="query-form" action="mailto:info@omnitradeservices.ca" method="post" enctype="text/plain">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="text" placeholder="Company Name" style="grid-column: span 2;">
-            <textarea placeholder="Tell us about the services you require..." required></textarea>
-            <button type="submit" class="submit-btn">SUBMIT QUERY</button>
-        </form>
-    </div>
+    <div class="contact-container" style="max-width: 600px; margin: 40px auto; padding: 20px;">
+    <h2 style="color: #0a192f; font-weight: 800; text-align: center;">POST A QUERY</h2>
+    
+    <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" style="display: grid; gap: 15px;">
+        
+        <input type="text" name="name" placeholder="Full Name" required 
+               style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;">
+        
+        <input type="email" name="email" placeholder="Your Email Address" required 
+               style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;">
+        
+        <input type="text" name="service" placeholder="Service Needed (e.g. Staffing or Cleaning)" 
+               style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;">
+        
+        <textarea name="message" placeholder="Tell us about your requirements..." rows="5" required 
+                  style="padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;"></textarea>
+        
+        <button type="submit" 
+                style="background: #0a192f; color: #c5a059; padding: 15px; font-weight: bold; border: none; cursor: pointer; letter-spacing: 2px; text-transform: uppercase;">
+                SUBMIT QUERY
+        </button>
+    </form>
+</div>
 </section>
 
 <div class="trust-badges">
