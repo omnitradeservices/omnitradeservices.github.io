@@ -87,55 +87,14 @@
         .s-info h3 { color: var(--navy); margin-top: 0; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
         .s-info ul { padding-left: 20px; font-size: 0.9rem; color: #555; margin-top: 15px; }
 
-        .query-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.query-form input, 
-.query-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box; /* Ensures padding doesn't break the layout */
-}
-
-.query-form textarea {
-    height: 120px;
-}
-
-.submit-btn {
-    grid-column: span 2;
-    background-color: #000; /* Or your preferred corporate color */
-    color: #D4AF37; /* Gold text to match your header */
-    padding: 15px;
-    border: 2px solid #D4AF37;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #D4AF37;
-    color: #000;
-}
-
-/* On mobile, make the form one column */
-@media (max-width: 600px) {
-    .query-form {
-        grid-template-columns: 1fr;
-    }
-    .query-form input, 
-    .query-form textarea, 
-    .submit-btn {
-        grid-column: span 1;
-    }
-}
-
+       /* Query Form */
+        .query-section { background: var(--navy); color: white; border-radius: 8px; padding: 60px; margin-top: 40px; }
+        .query-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .query-form input, .query-form textarea { padding: 15px; border: none; border-radius: 4px; font-size: 1rem; width: 100%; box-sizing: border-box; }
+        .query-form textarea { grid-column: span 2; height: 120px; }
+        .submit-btn { grid-column: span 2; background: var(--gold); color: white; font-weight: bold; border: none; padding: 15px; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .submit-btn:hover { background: #b08d4a; }
+        
         /* Career Section */
         .career-box { background: var(--light); padding: 40px; border-radius: 8px; border-left: 5px solid var(--gold); }
         .career-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
