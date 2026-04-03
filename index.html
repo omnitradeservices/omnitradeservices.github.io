@@ -222,45 +222,7 @@
         </div>
     </div>
 </section>
-    <script>
-  // This is the specific code to handle the Query Form without redirecting
-  const queryForm = document.getElementById("query-form");
-  const formStatus = document.getElementById("form-status");
-  const submitBtn = document.getElementById("submit-btn");
-
-  if (queryForm) {
-    queryForm.addEventListener("submit", async function(event) {
-      event.preventDefault();
-      const data = new FormData(event.target);
-      
-      // Visual feedback for the client
-      submitBtn.innerHTML = "SENDING...";
-      submitBtn.disabled = true;
-
-      fetch(event.target.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          // Success: Show the "24 hour" message and hide the form
-          formStatus.style.display = "block"; 
-          queryForm.style.display = "none"; 
-        } else {
-          // Professional error handling
-          alert("An error occurred. Please try again or contact us at info@omnitradeservices.ca.");
-          submitBtn.innerHTML = "SUBMIT QUERY";
-          submitBtn.disabled = false;
-        }
-      }).catch(error => {
-        alert("Unable to process your request. Please check your internet connection.");
-        submitBtn.innerHTML = "SUBMIT QUERY";
-        submitBtn.disabled = false;
-      });
-    });
-  }
-</script>
-
+       
 <div class="trust-badges">
     <div class="badge"><img src="images/image08.jpg"></div>
     <div class="badge"><img src="images/image09.jpg"></div>
@@ -271,14 +233,14 @@
 <section id="career">
     <div class="career-box">
         <h2 style="color: var(--navy); margin-top: 0;">CAREER WITH US</h2>
-        <form class="career-form" action="mailto:info@omnitradeservices.ca" method="post" enctype="multipart/form-data">
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Phone" required>
-            <textarea placeholder="Tell us about your background..."></textarea>
+        <form id="career-form" class="career-form" action="https://formspree.io/f/xlgowgaj" method="POST" enctype="multipart/form-data">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone" required>
+            <textarea name="background" placeholder="Tell us about your background..."></textarea>
             <div class="file-input">
-                <input type="file" name="resume">
+                <input type="file" name="resume" required>
             </div>
             <button type="submit" class="submit-btn">SEND APPLICATION</button>
         </form>
@@ -315,17 +277,74 @@
 <footer style="background: #050a0f; color: white; padding: 40px; text-align: center; font-size: 0.8rem; border-top: 1px solid #1a2a3a;">
     <p>&copy; 2025 OMNITRADE MANPOWER SOLUTIONS LTD. | Surrey, British Columbia</p>
 </footer>
-
-<script>
+    <script>
+    // --- 1. Slider Logic ---
     let slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
     function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
+        if(slides.length > 0) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
     }
     setInterval(nextSlide, 4000);
-</script>
 
+    // --- 2. Post a Query Logic ---
+    const queryForm = document.getElementById("query-form");
+    const formStatus = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+    
+    if (queryForm) {
+        queryForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            submitBtn.innerHTML = "SENDING...";
+            submitBtn.disabled = true;
+            fetch(event.target.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    formStatus.style.display = "block"; 
+                    queryForm.style.display = "none"; 
+                } else {
+                    alert("Error. Please try again.");
+                    submitBtn.innerHTML = "SUBMIT QUERY";
+                    submitBtn.disabled = false;
+                }
+            });
+        });
+    }
+
+    // --- 3. Career Form Logic ---
+    const careerForm = document.getElementById("career-form");
+    if (careerForm) {
+        const careerSubmitBtn = careerForm.querySelector(".submit-btn");
+        careerForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            careerSubmitBtn.innerHTML = "SENDING...";
+            careerSubmitBtn.disabled = true;
+            fetch(event.target.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    alert("Application Sent Successfully.");
+                    careerForm.reset();
+                    careerSubmitBtn.innerHTML = "SEND APPLICATION";
+                    careerSubmitBtn.disabled = false;
+                } else {
+                    alert("Upload failed. Try again.");
+                    careerSubmitBtn.innerHTML = "SEND APPLICATION";
+                    careerSubmitBtn.disabled = false;
+                }
+            });
+        });
+    }
+    </script>
 </body>
 </html>
